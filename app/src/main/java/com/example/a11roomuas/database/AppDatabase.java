@@ -1,6 +1,7 @@
 package com.example.a11roomuas.database;
 
-
+//Berisi penampung database dan berfungsi sebagai titik akses utama bagi koneksi saat ini ke data
+// relasional aplikasi yang persisten.
 
 
 
@@ -19,13 +20,14 @@ import com.example.a11roomuas.database.dao.MahasiswaDao;
 import com.example.a11roomuas.database.entitas.Mahasiswa;
 
 
-@Database(entities = {Mahasiswa.class} , version = 1)
+@Database(entities = {Mahasiswa.class} , version = 1) //Version DB
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase sInstance;
     private final MutableLiveData<Boolean> mIsDatabaseCreated = new MutableLiveData<>();
 
     @VisibleForTesting
+    //Database Name
     public static final  String DATABASE_NAME ="mahasiswa";
     public abstract MahasiswaDao mahasiswaDao();
 
@@ -40,6 +42,7 @@ public abstract class AppDatabase extends RoomDatabase {
         }
     }
 
+    //Build Database
     public static AppDatabase buildDatabase(final Context context)
     {
         return Room.databaseBuilder(context, AppDatabase.class,DATABASE_NAME)

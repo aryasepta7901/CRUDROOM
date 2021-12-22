@@ -23,19 +23,17 @@ public class ViewMahasiswa extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_mahasiswa);
 
-
+        //create a new Appdatabase
         database = AppDatabase.getInstance(getApplicationContext());
-
+        // Inisialisasi Array
         mahasiswaList = (ArrayList<Mahasiswa>) database.mahasiswaDao().getAll();
-
+        //Inisialisasi Adapter
         mahasiswaRVAdapter = new MahasiswaRVAdapter(mahasiswaList, ViewMahasiswa.this);
         mahasiswaRV = findViewById(R.id.idRVMahasiswa);
-
+        //Inisialiasi LayoutManager
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ViewMahasiswa.this,
                 RecyclerView.VERTICAL, false);
-
         mahasiswaRV.setLayoutManager(linearLayoutManager);
-
         mahasiswaRV.setAdapter(mahasiswaRVAdapter);
 
 

@@ -1,6 +1,6 @@
 package com.example.a11roomuas.database.entitas;
 
-
+//Merepresentasikan tabel dalam database
 
 
 import androidx.room.ColumnInfo;
@@ -9,10 +9,11 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Mahasiswa {
-    @PrimaryKey
+    @PrimaryKey //Primary Key
     public  int id;
 
-    @ColumnInfo(name ="nim") //ini adalah nama table
+    //Data Field Kolom
+    @ColumnInfo(name ="nim")
     public  String nim;
 
     @ColumnInfo(name="nama")

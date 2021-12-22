@@ -19,6 +19,7 @@ public class MahasiswaRVAdapter extends RecyclerView.Adapter<MahasiswaRVAdapter.
     private ArrayList<Mahasiswa> mahasiswaList;
     private Context context;
 
+    //Construct
     public MahasiswaRVAdapter(ArrayList<Mahasiswa> mahasiswaList, Context context) {
         this.mahasiswaList = mahasiswaList;
         this.context = context;
@@ -44,12 +45,9 @@ public class MahasiswaRVAdapter extends RecyclerView.Adapter<MahasiswaRVAdapter.
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, UpdateMahasiswaActivity.class);
+                    //Mengambil Data Detail by ID
                     i.putExtra("id", modal.id);
-
-
                     context.startActivity(i);
-
-
             }
         });
     }
